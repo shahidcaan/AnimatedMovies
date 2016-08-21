@@ -1,4 +1,4 @@
-
+#Define a new function readAllRecords()
 def readAllRecords():
     file = open("MoviesData.txt", "r")
     allMovies = file.readlines()
@@ -8,7 +8,7 @@ def readAllRecords():
         print(movie)
 
     
-        
+# Calling the defined function to execute it       
 readAllRecords()
 
 
