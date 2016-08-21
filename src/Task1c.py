@@ -13,7 +13,8 @@ userOption = ""
 
 while userOption != "2":
       userOption = input("Enter 1 to display records\
-                         \nEnter 2 to exit the program : ")
+                         \nEnter 2 to exit the program\
+                         \nEnter your choice here : ")
       if userOption == "1":
           readAllRecords()
 print("Program Terminated")
