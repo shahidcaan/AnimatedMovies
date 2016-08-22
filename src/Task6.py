@@ -55,8 +55,24 @@ the for loop and display the titles in the list.
 def printSortedTitles(sortedYearTitles):
     for title in sortedYearTitles:
         print(title)
+
 """
 Task 6e
+Write a function getUserChoice(), that takes no parameter and prompt
+the user to enter the year of movies or enter "t" if the user do not
+want to proceed with the program and terminate the program
+. The method returns the year.
+"""
+def getUserChoice():
+    userChoice = input("------------------------------------"\
+                 "\nEnter i to insert the year of movies"\
+                 "\nEnter t to terminate the program"\
+                 "\n------------------------------------"\
+                 "\nEnter your choice here : ")
+    return userChoice
+
+"""
+Task 6f
 Write a function getUserYear(), that takes no parameter and prompt
 the user to enter the year of movies. The method returns the year.
 """
@@ -64,13 +80,44 @@ def getUserYear():
     year = input("Please enter the year of movies : ")
     return year
             
-        
-  
+"""
+Task 6g
+Write a function getUserSorting(), that takes no parameter and prompt
+the user to select the sorting type and return the user choice of sorting. 
+"""
+def getUserSorting():
+    sortingType = input("--------------------------------------"\
+                           "\nEnter a to sort Movies Titles from A-Z"\
+                           "\nEnter z to sort Movies Titles from Z-A "\
+                           "\n--------------------------------------"\
+                           "\nEnter your choice here : ")
+    return sortingType        
+
+"""
+Task 6g
+Write a function mainFunction() with no parameter that makes the
+use of all the previous functions to run the program. 
+"""
+def mainFunction():
+
+    userChoice = ""
+    while userChoice != "t":
+        userChoice = getUserChoice()
+        if userChoice == "i":
+            year = getUserYear()
+            yearTitles = getYearTitles(year)
+            sortedList = []
+            sortingType = getUserSorting()
+            if sortingType == "a":
+                sortedList = sortTitlesAZ(yearTitles)
+            elif sortingType == "z":
+                sortedList = sortTitlesZA(yearTitles)
+            print("Animated movies of year "+ year +" sorted in "+ sortingType )
+            printSortedTitles(sortedList)
+           
+        else:
+            print("Program Terminated. Thank you") 
 
 
-
-
-
-
-
+mainFunction()
 
