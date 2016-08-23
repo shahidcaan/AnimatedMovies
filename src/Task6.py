@@ -64,11 +64,14 @@ want to proceed with the program and terminate the program
 . The method returns the year.
 """
 def getUserChoice():
-    userChoice = input("------------------------------------"\
-                 "\nEnter i to insert the year of movies"\
-                 "\nEnter t to terminate the program"\
-                 "\n------------------------------------"\
-                 "\nEnter your choice here : ")
+    userChoice = ""
+    # Task 6i - Please see in the worksheet
+    while (userChoice != "i" and userChoice != "t"):
+        userChoice = input("------------------------------------"\
+                     "\nEnter i to insert the year of movies"\
+                     "\nEnter t to terminate the program"\
+                     "\n------------------------------------"\
+                     "\nEnter your choice here : ")
     return userChoice
 
 """
@@ -77,7 +80,9 @@ Write a function getUserYear(), that takes no parameter and prompt
 the user to enter the year of movies. The method returns the year.
 """
 def getUserYear():
-    year = input("Please enter the year of movies : ")
+    year = "yyyy"
+    while not year.isnumeric() or len(year) > 4 or len(year) < 4:
+        year = input("Please enter the year of movies : ")
     return year
             
 """
@@ -94,7 +99,7 @@ def getUserSorting():
     return sortingType        
 
 """
-Task 6g
+Task 6h
 Write a function mainFunction() with no parameter that makes the
 use of all the previous functions to run the program. 
 """
