@@ -53,8 +53,10 @@ parameter sorted titles list of type List, loop through it using
 the for loop and display the titles in the list. 
 """
 def printSortedTitles(sortedYearTitles):
+    print("***************************")
     for title in sortedYearTitles:
         print(title)
+    print("***************************")
 
 """
 Task 6e
@@ -66,13 +68,29 @@ want to proceed with the program and terminate the program
 def getUserChoice():
     userChoice = ""
     # Task 6i - Please see in the worksheet
-    while (userChoice != "i" and userChoice != "t"):
+    while (checkValidity(userChoice) == False):
         userChoice = input("------------------------------------"\
                      "\nEnter i to insert the year of movies"\
                      "\nEnter t to terminate the program"\
                      "\n------------------------------------"\
                      "\nEnter your choice here : ")
+        print(checkValidity(userChoice))
+        if (checkValidity(userChoice) == False):
+            print("Sorry choice is not valid (enter ONLY i or t)")
+    
     return userChoice
+
+"""
+Task 6e-1
+Write a function getUserChoice(), that takes no parameter and prompt
+the user to enter the year of movies or enter "t" if the user do not
+want to proceed with the program and terminate the program
+. The method returns the year.
+"""
+
+def checkValidity(userChoice):
+    return userChoice == "i" or userChoice == "t"
+    
 
 """
 Task 6f
