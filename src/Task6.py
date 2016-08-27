@@ -133,10 +133,10 @@ def mainFunction():
             sortingType = getUserSorting()
             if sortingType == "a":
                 sortedList = sortTitlesAZ(yearTitles)
-                sortingType = "A-Z";
+                sortingType = "A-Z (Alphabetical Order)";
             elif sortingType == "z":
                 sortedList = sortTitlesZA(yearTitles)
-                sortingType = "Z-A";
+                sortingType = "Z-A (Reverse Alphabetical Order)";
             print("Animated movies of year "+ year +" sorted in "+ sortingType )
             printSortedTitles(sortedList)
            
