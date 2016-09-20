@@ -143,6 +143,6 @@ def mainFunction():
         else:
             print("Program Terminated. Thank you") 
 
-
+#Calling thr mainFunction() method to execute the whole program
 mainFunction()
 
